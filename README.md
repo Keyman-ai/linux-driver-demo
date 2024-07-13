@@ -3,7 +3,7 @@
 Linux 设备驱动程序是 Linux 内核中用于与硬件设备交互的模块。它们提供了硬件设备和操作系统之间的接口，使得应用程序能够通过标准的系统调用来访问硬件设备。以下是 Linux 设备驱动框架的概述，包括常见的驱动类型和驱动程序的基本结构。
 ### Linux 设备驱动框架
 设备驱动类型
-字符设备驱动程序（Character Device Drivers）:
+### 字符设备驱动程序（Character Device Drivers）:
 
 处理字符流，如串口设备、键盘、鼠标等。
 提供了 open, read, write, close, ioctl 等操作。
