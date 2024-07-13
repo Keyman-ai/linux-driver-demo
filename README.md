@@ -22,21 +22,21 @@ Linux 设备驱动程序是 Linux 内核中用于与硬件设备交互的模块�
 ### 驱动程序的基本结构
 Linux 设备驱动程序通常包括以下几个部分：
 
-初始化和清理:
+#### 初始化和清理:
 
 module_init 和 module_exit 宏用于指定模块的初始化和清理函数，也是驱动的出入口，当用户态执行insmod和rmmod命令时会触发module_init和module_exit函数
 
-### 设备文件操作:
+#### 设备文件操作:
 
 定义设备文件操作结构体 file_operations，包含打开、读取、写入、关闭等操作。
 
-### 设备注册和注销:
+#### 设备注册和注销:
 
 注册字符设备 register_chrdev。
 注册块设备 register_blkdev。
 注册网络设备 register_netdev。
 
-### 中断处理:
+#### 中断处理:
 
 注册中断处理程序 request_irq。
 
