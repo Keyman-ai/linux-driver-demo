@@ -1,0 +1,55 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+/*
+ * Copyright (c) 2020 Rockchip Electronics Co., Ltd.
+ *
+ */
+
+#include "rk3568-evb1-ddr4-v10.dtsi"
+#include "rk3568-linux.dtsi"
+
+#include <dt-bindings/display/rockchip_vop.h>
+/{
+    topeet{
+        #address-cells = <1>;
+        #size-cells = <1>;
+        compatible = "simple-bus";
+
+        myLed{
+            compatible = "my devicetree";
+            reg = <0xFDD60000 0x00000004>;
+        };
+    };
+};
+
+&vp0 {
+	cursor-win-id = <ROCKCHIP_VOP2_CLUSTER0>;
+};
+
+&vp1 {
+	cursor-win-id = <ROCKCHIP_VOP2_CLUSTER1>;
+};
+
+
+&uart7 { 
+		status ="okay"; 
+		pinctrl-name = "default"; 
+		pinctrl-0 = <&uart7m1_xfer>; 
+};
+&uart4 { 
+	    status = "okay"; 
+		pinctrl-names = "default"; 
+		pinctrl-0 = <&uart4m1_xfer>; 
+};
+&uart9 { 
+	    status = "okay"; 
+		pinctrl-names = "default"; 
+		pinctrl-0 = <&uart9m1_xfer>; 
+};
+&can1 {
+        status = "okay";
+		compatible = "rockchip,canfd-1.0";
+        assigned-clocks = <&cru CLK_CAN1>;
+        assigned-clock-rates = <150000000>;  //If can bitrate lower than 3M,the clock-rates should set 100M,else set 200M.
+        pinctrl-names = "default";
+        pinctrl-0 = <&can1m1_pins>;
+};
