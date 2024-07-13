@@ -112,6 +112,7 @@ MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Your Name");
 MODULE_DESCRIPTION("A simple Linux char driver");
 MODULE_VERSION("0.1");
+```
 
 ### 详细说明各部分内容：
 初始化和清理函数:
